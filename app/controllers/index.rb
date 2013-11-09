@@ -17,5 +17,9 @@ post '/events/create' do
   p params
   @event = Event.create(params)
   p @event
+  p @event.date
+  p @event.date.year
+  # p date.month
+  # p date.day
   redirect '/'
 end
