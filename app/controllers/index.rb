@@ -14,12 +14,16 @@ end
 
 post '/events/create' do
   p Event.all
+  p '*'*80
   p params
+  p params[:date]
+  p Chronic.parse(params[:date])
+  p params[:date] = Chronic.parse(params[:date])
   @event = Event.create(params)
   p @event
   p @event.date
-  p @event.date.year
+  # p @event.date.year
   # p date.month
   # p date.day
-  redirect '/'
+  redirect '/events/new'
 end
